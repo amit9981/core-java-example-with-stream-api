@@ -1,13 +1,15 @@
 package com.example.corejavaexamplewithstreamapi.filter;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class FilterExample {
 
 	public static void main(String[] args) {
 		
-		List<Emp> listEmpl = Arrays.asList(new Emp(111, "hemant", "IT", 211324l, "bangalore"),
+		List<Emp> listImpl = Arrays.asList(new Emp(111, "hemant", "IT", 211324l, "bangalore"),
 				new Emp(131, "hemant", "IT", 211324, "hyderabad"),
 				new Emp(411, "hemant", "IT", 211324, "bangalore"),
 				new Emp(151, "hemant", "IT", 211324, "pune"),
@@ -26,16 +28,23 @@ public class FilterExample {
 				);
 		
 		System.out.println("===========================================================");
-		listEmpl.forEach(System.out::println);
+		listImpl.forEach(System.out::println);
 		System.out.println("==========================bangalore===========================");
-		List<Emp> bangalorelistEmpl = listEmpl.stream().filter(emp->emp.getCity().equals("bangalore")).collect(Collectors.toList());
+		List<Emp> bangalorelistEmpl = listImpl.stream().filter(emp->emp.getCity().equals("bangalore")).collect(Collectors.toList());
 		bangalorelistEmpl.forEach(System.out::println);
 		System.out.println("===========================pune===========================");
-		List<Emp> punelistEmpl = listEmpl.stream().filter(emp->emp.getCity().equals("pune")).collect(Collectors.toList());
+		List<Emp> punelistEmpl = listImpl.stream().filter(emp->emp.getCity().equals("pune")).collect(Collectors.toList());
 		punelistEmpl.forEach(System.out::println);
 		System.out.println("==========================hyderabad===========================");
-		List<Emp> hyderabadlistEmpl = listEmpl.stream().filter(emp->emp.getCity().equals("hyderabad")).collect(Collectors.toList());
+		List<Emp> hyderabadlistEmpl = listImpl.stream().filter(emp->emp.getCity().equals("hyderabad")).collect(Collectors.toList());
 		hyderabadlistEmpl.forEach(System.out::println);
+		System.out.println("==========================groupingBy===========================");
+		final Map<String, List<Emp>> collect = listImpl.stream().collect(Collectors.groupingBy(Emp::getCity));
+		for (Map.Entry<String, List<Emp>> entry : collect.entrySet()) {
+			String key = entry.getKey();
+			List<Emp> value = entry.getValue();
+			System.out.println(key+"  "+value);
+		}
 
 	}
 

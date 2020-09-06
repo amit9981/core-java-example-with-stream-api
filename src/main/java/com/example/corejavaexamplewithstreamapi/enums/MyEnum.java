@@ -1,34 +1,24 @@
 package com.example.corejavaexamplewithstreamapi.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
 public class MyEnum {
-
     private PizzaStatus status;
-
-    public PizzaStatus getStatus ( ) {
-        return status;
-    }
-
     public enum PizzaStatus {
         ORDERED,
         READY,
-        DELIVERED;
+        DELIVERED
     }
 
+    @Getter
+    @AllArgsConstructor
     public enum Status {
         ORDERED("sdg"),
         READY(""),
         DELIVERED("name");
-
         private String url;
-
-        Status (String url) {
-            this.url = url;
-        }
-
-        public String url ( ) {
-            return url;
-        }
-
     }
 
     public static void main (String[] args) {
@@ -40,7 +30,8 @@ public class MyEnum {
         Status[] values1 = Status.values();
         System.out.println("----------------------------------------------");
         for (Status s : values1) {
-            System.out.println(s.url());
+            System.out.println(s.getUrl());
+            System.out.println(s);
         }
 
     }
