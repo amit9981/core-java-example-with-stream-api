@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SortingExample {
 
@@ -34,7 +35,8 @@ public class SortingExample {
       Comparator<Employee> compareByFirstName = Comparator.comparing( Employee::getFirstName );
        
       //last name comparator
-      Comparator<Employee> compareByLastName = Comparator.comparing( Employee::getLastName );
+      Comparator<Employee> compareByLastName = Comparator.comparing(
+          employee -> employee.getLastName());
        
       //Compare by first name and then last name (multiple fields)
       Comparator<Employee> compareByFullName = compareByFirstName.thenComparing(compareByLastName);
@@ -42,6 +44,9 @@ public class SortingExample {
       List<Employee> empListfull = empList.stream().sorted(compareByFullName).collect(Collectors.toList());
       empListfull.forEach(System.out::println);
 
-	}
+ 
+
+
+  }
 
 }

@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 @Log4j2
 public class CharSequence {
     String val = "lksdlksdkjfDKFSDFasjdlfA";
+    String intVal = "23425235";
 
     @DisplayName("Find number of characters present in string ")
     @Test
@@ -21,9 +22,13 @@ public class CharSequence {
         System.out.println(stringLongMap);
     }
 
-    @DisplayName("Character print..")
+    @DisplayName("Print. Characters .")
     @Test
     void charPrint(){
         val.chars().mapToObj(ch->Character.toString((char)ch)).forEach(System.out::println);
+        System.out.println("=============================================================");
+        intVal.chars().forEach(in->System.out.println((char)in));
+        System.out.println("=============================================================");
+        val.chars().forEach(ch->System.out.println((char)ch));
     }
 }
