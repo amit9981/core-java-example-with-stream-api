@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 @Log4j2
 public class CharSequence {
-    String val = "lksdlksdkjfDKFSDF asjdlf";
+    String val = "lksdlksdkjfDKFSDFasjdlfA";
 
     @DisplayName("Find number of characters present in string ")
     @Test
@@ -19,5 +19,11 @@ public class CharSequence {
         final Map<String, Long> stringLongMap = replace.chars().mapToObj(ch -> Character.toString((char) ch))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(stringLongMap);
+    }
+
+    @DisplayName("Character print..")
+    @Test
+    void charPrint(){
+        val.chars().mapToObj(ch->Character.toString((char)ch)).forEach(System.out::println);
     }
 }
