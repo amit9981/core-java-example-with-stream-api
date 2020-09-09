@@ -18,7 +18,7 @@ public class CharSequence {
     void findNumberOfChar ( ) {
         final String replace = val.replace(" ", "");//removing extra space
         final Map<String, Long> stringLongMap = replace.chars().mapToObj(ch -> Character.toString((char) ch))
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(stringLongMap);
     }
 
