@@ -5,7 +5,7 @@ public class LinearSeach {
 	public static void main(String[] args) {
 
 		int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		int searchResult = seachElement(arr, 12);
+		int searchResult = searchElement(arr, 12);
 		if (searchResult != -1)
 			System.out.println("Index number:" + searchResult + "  searched value:" + arr[searchResult]);
 		else
@@ -21,7 +21,7 @@ public class LinearSeach {
 	}
 
 	//Linear search time complexity : O(n) and Iterative way
-	private static int seachElement(int arr[], int element) {
+	private static int searchElement(int arr[], int element) {
 
 		for (int i = 0; i < arr.length; i++) {
 
