@@ -1,8 +1,8 @@
 package com.example.corejavaexamplewithstreamapi.seaching;
 
-public class LinearSeach {
+public class LinearSearch {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 
 		int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		int searchResult = searchElement(arr, 12);
@@ -18,10 +18,10 @@ public class LinearSeach {
 		else
 			System.out.println("Searching element has not been founded");
 
-	}
+	}*/
 
 	//Linear search time complexity : O(n) and Iterative way
-	private static int searchElement(int arr[], int element) {
+	public static int searchElement(int arr[], int element) {
 
 		for (int i = 0; i < arr.length; i++) {
 
@@ -33,7 +33,7 @@ public class LinearSeach {
 	}
 	
 	 /* Recursive Method to search x in arr[l..r] */
-   private static int recSearch(int arr[], int l, int r, int x) 
+   public static int recSearch(int arr[], int l, int r, int x)
     { 
          if (r < l) 
             return -1; 

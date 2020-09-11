@@ -1,57 +1,63 @@
 package com.example.corejavaexamplewithstreamapi.seaching;
 
+//In BinarySearch array should be sorted arrays
 public class BinarySearch {
 
-	public static int searchElement(int arr[], int element) {
+	public static int binarySearch(int arr[], int elementToSearch) {
 
-		int l = 0, r = arr.length - 1;
+		int firstIndex = 0;
+		int lastIndex = arr.length - 1;
 
-		while (l <= r) {  //<= whenever l value not cones equal to r value or less than
-			int mid = l + (r - l) / 2;//L mid index
-			if (arr[mid] == element) //comparing index value
-			{
-				return mid; //final value if find element
+		// termination condition (element isn't present)
+		while (firstIndex <= lastIndex) {
+			int middleIndex = (firstIndex + lastIndex) / 2;
+			// if the middle element is our goal element, return its index
+			if (arr[middleIndex] == elementToSearch) {
+				return middleIndex;
 			}
-			if (arr[mid] < element) {
-				l = mid + 1;
 
-			} else {
-				r = mid - 1;
-
+			// if the middle element is smaller
+			// point our index to the middle+1, taking the first half out of consideration
+			if (arr[middleIndex] < elementToSearch) {
+				firstIndex = middleIndex + 1;
 			}
+
+			// if the middle element is bigger
+			// point our index to the middle-1, taking the second half out of consideration
+			else {
+				lastIndex = middleIndex - 1;
+			}
+
 
 		}
-
-		return -1; //if not find element
+		return -1;
 	}
-	
 
-	 /* Recursive Method to search x in arr[l..r] */
-  public static int binarySearch(int arr[], int l, int r, int x)
-   { 
-	  if (r >= l) { 
-          int mid = l + (r - l) / 2; 
 
-          // If the element is present at the 
-          // middle itself 
-          if (arr[mid] == x) 
-              return mid; 
+	public static int recursiveBinarySearch(int arr[], int firstElement, int lastElement,
+			int elementToSearch) {
 
-          // If element is smaller than mid, then 
-          // it can only be present in left subarray 
-          if (arr[mid] > x) 
-              return binarySearch(arr, l, mid - 1, x); 
+		// termination condition
+		if (lastElement >= firstElement) {
+			int mid = firstElement + (lastElement - firstElement) / 2;
 
-          // Else the element can only be present 
-          // in right subarray 
-          return binarySearch(arr, mid + 1, r, x); 
-      } 
+			// if the middle element is our goal element, return its index
+			if (arr[mid] == elementToSearch) {
+				return mid;
+			}
 
-      // We reach here when element is not present 
-      // in array 
-      return -1;
-       
-   } 
+			// if the middle element is bigger than the goal element
+			// recursively call the method with narrowed data
+			if (arr[mid] > elementToSearch) {
+				return recursiveBinarySearch(arr, firstElement, mid - 1, elementToSearch);
+				// else, recursively call the method with narrowed data
+			} else {
+				return recursiveBinarySearch(arr, mid + 1, lastElement, elementToSearch);
+			}
+		}
+
+		return -1;
+	}
 
 
 }
