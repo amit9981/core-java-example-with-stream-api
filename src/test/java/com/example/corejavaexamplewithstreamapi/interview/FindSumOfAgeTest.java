@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class FindSumOfAgeTest {
 
+
   Employee e1 = new Employee(
       1, 23, "M", "Rick", "Beethovan");
   Employee e2 = new Employee(
@@ -31,7 +32,28 @@ class FindSumOfAgeTest {
 
   @Test
   void getSum() {
-   final int sumAge = FindSumOfAge.getSum(empList);
-   System.out.println(sumAge);
+    final int sumAge = FindSumOfAge.getSum(empList);
+    System.out.println(sumAge);
+  }
+
+  @Test
+  void getAverage() {
+    System.out.println(FindSumOfAge.getAverage(empList));
+  }
+
+  @Test
+  void getMax() {
+
+    System.out.println(FindSumOfAge.getMax(empList));
+  }
+
+  @Test
+  void getMin() {
+    System.out.println(FindSumOfAge.getMin(empList));
+  }
+
+  @Test
+  void getCount() {
+    System.out.println(FindSumOfAge.getCount(empList));
   }
 }
