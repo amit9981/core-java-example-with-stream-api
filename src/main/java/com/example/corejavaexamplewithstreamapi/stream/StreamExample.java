@@ -1,6 +1,7 @@
 package com.example.corejavaexamplewithstreamapi.stream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,7 +31,7 @@ public class StreamExample {
 	}
 
 	private static List<String> sortingAscendingByJava8(List<String> names) {
-		List<String> names1 = names.stream().sorted().collect(Collectors.toList());
+		List<String> names1 = names.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 
 		return names1;
 
