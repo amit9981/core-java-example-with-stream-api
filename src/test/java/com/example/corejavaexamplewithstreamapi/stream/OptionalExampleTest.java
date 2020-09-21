@@ -1,5 +1,7 @@
 package com.example.corejavaexamplewithstreamapi.stream;
 
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -18,9 +20,14 @@ class OptionalExampleTest {
 
     @Test
     void getOptionalList () {
-        Collection<Integer> number
-                = IntStream.range(0, 10).boxed().collect(Collectors.toList());
+        Collection<Integer> number//boxed()->covert IntStream to Stream<Integer>
+                = IntStream.range(0, 10).filter(x->x>=5).boxed().collect(Collectors.toCollection(
+            LinkedHashSet::new));
         final List<String> list = OptionalExample.getList(listOfOptionals);
         System.out.println(list);
+        System.out.println(number);
+        final List<String> unmodifiableList = Collections.unmodifiableList(list);
+       // unmodifiableList.add("sonu"); RTE
+
     }
 }

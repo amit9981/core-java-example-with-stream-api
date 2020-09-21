@@ -2,6 +2,7 @@ package com.example.corejavaexamplewithstreamapi.stream;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,8 +26,9 @@ public class StreamExample {
 
 	private static List<String> sortingDecendingByJava8(List<String> names) {
 
-		List<String> names1 = names.stream().peek(System.out::println).sorted((a,b)->b.compareTo(a)).collect(Collectors.toList());
-
+		List<String> names1 = names.stream().peek(System.out::println).sorted((a,b)->b.compareTo(a))
+				.collect(Collectors.toCollection(LinkedList::new));
+		System.out.println(names1.getClass());
 		return names1;
 	}
 

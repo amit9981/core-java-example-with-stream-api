@@ -15,7 +15,7 @@ public class IntStreamExample {
   @Test
   void rangeClosed() {
     final IntStream range = IntStream.rangeClosed(0, 10);
-    final Stream<Integer> boxed = range.boxed();
+    final Stream<Integer> boxed = range.boxed(); //boxed()->covert IntStream to Stream<Integer>
     range.forEach(System.out::println);
   }
 
