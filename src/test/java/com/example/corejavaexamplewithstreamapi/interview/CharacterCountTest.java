@@ -2,7 +2,9 @@ package com.example.corejavaexamplewithstreamapi.interview;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 class CharacterCountTest {
 
@@ -11,4 +13,5 @@ class CharacterCountTest {
         final String occurrences = CharacterCount.charCount("occurrences");
         System.out.println(occurrences);
     }
+    
 }
