@@ -17,5 +17,20 @@ public class SortListByMarks {
                 .thenComparing(comparingLastName);
         Collections.sort(studentList, studentComparator);
     }
+    public static Comparator<Student> marks = new Comparator<Student>() {
 
+        @Override
+        public int compare (Student o1, Student o2) {
+            int val = 0;
+            val = (o2.getMark() - o1.getMark());
+            if (val == 0) {
+                val = o2.getFirstName().compareTo(o1.getFirstName());
+                if (val == 0) {
+                    val = o2.getLastName().compareTo(o1.getLastName());
+                }
+            }
+            return val;
+
+        }
+    };
 }
