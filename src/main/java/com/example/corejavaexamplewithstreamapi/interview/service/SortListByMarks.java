@@ -9,6 +9,7 @@ import java.util.List;
 
 public class SortListByMarks {
 
+    //java 8
     public static void sort (List<Student> studentList) {
         final Comparator<Student> comparingMark = Comparator.comparing(Student::getMark, Comparator.reverseOrder());
         final Comparator<Student> comparingFistName = Comparator.comparing(Student::getFirstName, Comparator.reverseOrder());
@@ -17,6 +18,8 @@ public class SortListByMarks {
                 .thenComparing(comparingLastName);
         Collections.sort(studentList, studentComparator);
     }
+
+    //java 7
     public static Comparator<Student> marks = new Comparator<Student>() {
 
         @Override
