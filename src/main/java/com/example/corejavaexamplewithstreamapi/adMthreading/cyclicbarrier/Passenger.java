@@ -22,7 +22,7 @@ public class Passenger implements Runnable {
     Thread.currentThread().setName(name);
     Thread.sleep(timeTaken);
     System.out.println("Passenger thread arrived : "+Thread.currentThread().getName());
-    final int await = barrier.await();
+    final int await = barrier.await();//waiting for count become 0.
     if (await == 0)
     System.out.println("Passengers threads waiting time ended cab ca proceed further..");
 

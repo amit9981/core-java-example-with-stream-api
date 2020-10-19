@@ -27,7 +27,7 @@ public class ExecutableFrameworkExample {
   private static Runnable runnable2 = () -> {
     for (int i = 0; i < 10; i++) {
       try {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         System.out.println("Task  +"+i+"+:-" + Thread.currentThread().getName());
       } catch (InterruptedException e) {
         System.out.println("Occurred InterruptedException");
