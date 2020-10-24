@@ -2,6 +2,7 @@ package com.example.corejavaexamplewithstreamapi.collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,6 +22,7 @@ public class ListShort {
         System.out.println("Without Sort:" + names);
         System.out.println(names.stream().sorted().collect(Collectors.toList()));
         System.out.println(names.stream().sorted((x, y) -> y.compareTo(x)).collect(Collectors.toList()));
+        System.out.println(names.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
     }
 
     public static void sortingAscendingByJava8 (List<String> names) {
