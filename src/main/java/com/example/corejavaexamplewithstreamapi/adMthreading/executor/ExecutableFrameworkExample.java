@@ -73,6 +73,7 @@ public class ExecutableFrameworkExample {
     executorService.submit(runnable2);
     final Future submit = executorService.submit(callable);
       System.out.println(submit.get());
+    executorService.shutdownNow();
 
   }
 
