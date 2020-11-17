@@ -5,7 +5,7 @@ public class Car {
     private String name;
     private Integer age;
 
-    public Car (Integer id, String name, Integer age) {
+    private  Car (Integer id, String name, Integer age) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -44,8 +44,8 @@ public class Car {
         private String name;
         private Integer age;
 
-        CarBuilder ( ) {
-        }
+       /* CarBuilder ( ) {
+        }*/
 
         public CarBuilder id (Integer id) {
             this.id = id;

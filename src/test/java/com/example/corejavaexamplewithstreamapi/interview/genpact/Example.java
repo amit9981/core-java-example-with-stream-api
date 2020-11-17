@@ -15,7 +15,17 @@ public class Example {
     @Test
     void findNumberOfRepeated ( ) {
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 1, 3, 5, 6, 7);
-        final Map<Integer, Long> collect = integers.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        final Map<Integer, Long> collect = integers.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(collect);
+        final long count = collect.values().stream().filter(x -> x >= 2).count();
+        System.out.println(count);
+    }
+    @Test
+    void findNumberOfRepeated1 ( ) {
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 1, 3, 5, 6, 7);
+        final Map<Integer, Integer> collect = integers.stream()
+                .collect(toMap(k->k,v->1,Integer::sum, LinkedHashMap::new));
         System.out.println(collect);
         final long count = collect.values().stream().filter(x -> x >= 2).count();
         System.out.println(count);
@@ -30,18 +40,18 @@ public class Example {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(collect);
     }
+
     @Test
-    void findCharsOfRepeated1(){
+    void findCharsOfRepeated1 ( ) {
 
         String s = "hemant kumar sahu";
         s = s.replaceAll("\\s", "");
-        Map<Character, Integer> frequencies = s.chars().boxed()
-                .collect(toMap(
-                        // key = char
-                        k -> Character.valueOf((char) k.intValue()),
-                        v -> 1,         // 1 occurence
-                        Integer::sum,// counting
-                        TreeMap::new)); //hashMap to TreeMap
-        System.out.println("Frequencies:\n" + frequencies);
+        final TreeMap<Character, Integer> collect = s.chars().boxed().collect(toMap(
+                k -> Character.valueOf((char) k.intValue()),
+                v -> 1,
+                Integer::sum,
+                TreeMap::new
+        ));
+        System.out.println(collect);
     }
 }

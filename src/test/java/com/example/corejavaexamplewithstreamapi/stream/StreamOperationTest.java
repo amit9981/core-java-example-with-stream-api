@@ -15,4 +15,13 @@ public class StreamOperationTest {
     System.out.println(integerSet);
   }
 
+  @Test
+  void removeDuplicateByDistinct() {
+    List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 5, 4, 3, 3, 1, 9);
+    final List<Integer> integerSet = StreamOperation.removeDuplicateByDistinct(integers);
+    System.out.println(integerSet);
+  }
+
+
+
 }
