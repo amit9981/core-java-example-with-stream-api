@@ -14,7 +14,6 @@ public class Student {
         this.lastName = lastName;
         this.mark = mark;
     }
-
     @Override
     public String toString ( ) {
         return "Student{" +
