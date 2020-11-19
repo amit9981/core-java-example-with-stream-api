@@ -39,4 +39,16 @@ class ExampleTest {
         System.out.println("--------------------------------------");
         Example.mapSort(map);
     }
+
+    @Test
+    void numberOfCharCount(){
+        final Map<Character, Integer> map = Example.numberOfCharCount("hemant kumar sahu");
+        System.out.println(map);
+    }
+
+    @Test
+    void numberOfCharCount1(){
+        final Map<Character, Integer> map = Example.numberOfCharCount1("hemant kumar sahu");
+        System.out.println(map);
+    }
 }

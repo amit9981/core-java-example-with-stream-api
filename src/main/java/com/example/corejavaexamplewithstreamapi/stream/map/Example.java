@@ -2,10 +2,7 @@ package com.example.corejavaexamplewithstreamapi.stream.map;
 
 import com.example.corejavaexamplewithstreamapi.interview.Employee;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 import static java.util.stream.Collectors.toMap;
 
@@ -38,5 +35,26 @@ public class Example {
         collect.forEach((k, v) ->
                 System.out.println(k + "  " + v)
         );
+    }
+
+    //through stream
+    public static Map<Character, Integer> numberOfCharCount (String str) {
+        str = str.replaceAll("\\s", "");
+        return str.chars().boxed().collect(toMap(
+                k -> Character.valueOf((char) k.intValue()), //key char
+                v -> 1,                              //value int
+                Integer::sum,TreeMap::new));//counting
+    }
+
+    //through map
+    public static Map<Character, Integer> numberOfCharCount1 (String str) {
+        str = str.replaceAll("\\s", "");
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : str.toCharArray()) {
+            map.merge(c, //key char
+                    1,                              //value int
+                    Integer::sum);//counting
+        }
+        return map;
     }
 }
