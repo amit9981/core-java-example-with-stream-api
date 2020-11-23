@@ -2,24 +2,6 @@ package com.example.corejavaexamplewithstreamapi.seaching;
 
 public class LinearSearch {
 
-	/*public static void main(String[] args) {
-
-		int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		int searchResult = searchElement(arr, 12);
-		if (searchResult != -1)
-			System.out.println("Index number:" + searchResult + "  searched value:" + arr[searchResult]);
-		else
-			System.out.println("Searching element has not been founded");
-		
-
-		int searchResult1 = recSearch(arr,0,arr.length-1,7);
-		if (searchResult1 != -1)
-			System.out.println("Index number:" + searchResult1 + "  searched value:" + arr[searchResult1]);
-		else
-			System.out.println("Searching element has not been founded");
-
-	}*/
-
 	//Linear search time complexity : O(n) and Iterative way
 	public static int searchElement(int arr[], int element) {
 
