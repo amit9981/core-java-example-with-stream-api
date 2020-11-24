@@ -1,6 +1,8 @@
 package com.example.corejavaexamplewithstreamapi.seaching;
 
 //In BinarySearch array should be sorted arrays
+//The time complexity of the binary search algorithm is O(log n).
+// The best-case time complexity would be O(1)
 public class BinarySearch {
 
 	public static int binarySearch(int arr[], int elementToSearch) {
@@ -18,7 +20,7 @@ public class BinarySearch {
 
 			// if the middle element is smaller
 			// point our index to the middle+1, taking the first half out of consideration
-			if (arr[middleIndex] < elementToSearch) {
+			else if (arr[middleIndex] < elementToSearch) {
 				firstIndex = middleIndex + 1;
 			}
 
@@ -27,8 +29,6 @@ public class BinarySearch {
 			else {
 				lastIndex = middleIndex - 1;
 			}
-
-
 		}
 		return -1;
 	}
@@ -48,7 +48,7 @@ public class BinarySearch {
 
 			// if the middle element is bigger than the goal element
 			// recursively call the method with narrowed data
-			if (arr[mid] > elementToSearch) {
+			else if (arr[mid] > elementToSearch) {
 				return recursiveBinarySearch(arr, firstElement, mid - 1, elementToSearch);
 				// else, recursively call the method with narrowed data
 			} else {

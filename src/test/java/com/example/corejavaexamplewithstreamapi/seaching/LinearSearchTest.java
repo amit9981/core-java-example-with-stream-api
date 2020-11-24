@@ -18,7 +18,6 @@ class LinearSearchTest {
 
   @Test
   void recSearch() {
-
     int searchResult1 = LinearSearch.recSearch(arr, 0, arr.length - 1, 7);
     if (searchResult1 != -1) {
       System.out
