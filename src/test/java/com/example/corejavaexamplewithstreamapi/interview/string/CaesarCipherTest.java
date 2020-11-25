@@ -6,9 +6,13 @@ class CaesarCipherTest {
 
     @Test
     void encrypt ( ) {
-        final StringBuffer encrypt = CaesarCipher.encrypt("ABC", 3);
-        final StringBuffer decrypt = CaesarCipher.decrypt(encrypt.toString(), 3);
-        System.out.println(encrypt);
-        System.out.println(decrypt);
+        String pwd = "hemantz";
+        final StringBuffer encrypt = CaesarCipher.encrypt(pwd, 1);
+        final StringBuffer decrypt = CaesarCipher.decrypt(encrypt.toString(), 1);
+        System.out.println("Initial: "+pwd);
+        System.out.println("encrypt: "+encrypt);
+        System.out.println("decrypt: "+decrypt);
     }
+
+
 }

@@ -8,11 +8,11 @@ public class CaesarCipher {
 
         for (char c : text.toCharArray()) {
             if (Character.isUpperCase(c)) {
-                char ch = (char) (((int) c +
+                char ch = (char) (( c +
                         s - 65) % 26 + 65);
                 result.append(ch);
             } else {
-                char ch = (char) (((int) c +
+                char ch = (char) ((c +
                         s - 97) % 26 + 97);
                 result.append(ch);
             }
@@ -26,12 +26,12 @@ public class CaesarCipher {
 
         for (char c : text.toCharArray()) {
             if (Character.isUpperCase(c)) {
-                char ch = (char) (((int) c -
+                char ch = (char) ((c -
                         s + 65) % 26 + 65);
                 result.append(ch);
             } else {
-                char ch = (char) (((int) c -
-                        s + 97) % 26 + 97);
+                char ch = (char) ((c-
+                    s + 97) % 26 + 97);
                 result.append(ch);
             }
         }
