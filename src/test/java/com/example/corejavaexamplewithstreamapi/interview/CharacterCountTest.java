@@ -8,10 +8,12 @@ import java.util.stream.Collectors;
 
 class CharacterCountTest {
 
+
     @Test
     void charCount ( ) {
         final String occurrences = CharacterCount.charCount("occurrences");
-        System.out.println(occurrences);
+        CharacterCount.charCount1("occurrences");
+        CharacterCount.charCount2("occurrences");
     }
     
 }

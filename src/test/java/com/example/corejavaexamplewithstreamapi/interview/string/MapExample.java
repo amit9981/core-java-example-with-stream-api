@@ -1,5 +1,6 @@
 package com.example.corejavaexamplewithstreamapi.interview.string;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -28,7 +29,7 @@ public class MapExample {
     //Alternate ways
     Map<String, Integer> result2 = new LinkedHashMap<>();
     map.entrySet().stream()
-        .sorted(Map.Entry.comparingByKey())
+        .sorted(Map.Entry.comparingByKey(Collections.reverseOrder()))
         .forEachOrdered(x -> result2.put(x.getKey(), x.getValue()));
     System.out.println(result2);
   }
