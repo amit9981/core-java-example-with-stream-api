@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class IntStreamExample {
 
   @Test
-  void range() {
+  void  range() {
     final IntStream range = IntStream.range(0, 10);
     range.forEach(System.out::println);
   }
