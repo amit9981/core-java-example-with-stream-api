@@ -1,8 +1,6 @@
 package com.example.corejavaexamplewithstreamapi.basic.prog;
 
-import java.io.InputStream;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class PrimeNumber {
 
@@ -19,7 +17,7 @@ public class PrimeNumber {
   private static boolean isPrime(int num) {
     boolean flag = true;
     if (num == 0 || num == 1) {
-      flag = false;
+      return false;
     }
 
     for (int i = 2; i <= num / 2; i++) {
