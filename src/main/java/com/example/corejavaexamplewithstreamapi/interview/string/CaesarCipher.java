@@ -30,9 +30,10 @@ public class CaesarCipher {
                         s + 65) % 26 + 65);
                 result.append(ch);
             } else {
-                char ch = (char) ((c-
-                    s + 97) % 26 + 97);
-                result.append(ch);
+                final int i = c - 32;
+                char ch = (char) ((i -
+                    s + 65) % 26 + 65);
+                result.append((char)(ch+32));
             }
         }
         return result;
