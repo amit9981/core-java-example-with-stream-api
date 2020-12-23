@@ -1,9 +1,7 @@
-package com.example.corejavaexamplewithstreamapi.designpattern.adaptor.builder;
+package com.example.corejavaexamplewithstreamapi.designpattern.creational.adaptor.builder;
 
-import com.example.corejavaexamplewithstreamapi.designpattern.builder.Student;
+import com.example.corejavaexamplewithstreamapi.designpattern.creational.builder.Student;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
 

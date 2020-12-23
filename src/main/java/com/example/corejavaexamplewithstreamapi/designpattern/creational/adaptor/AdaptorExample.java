@@ -1,4 +1,4 @@
-package com.example.corejavaexamplewithstreamapi.designpattern.adaptor;
+package com.example.corejavaexamplewithstreamapi.designpattern.creational.adaptor;
 
 public class AdaptorExample {
 

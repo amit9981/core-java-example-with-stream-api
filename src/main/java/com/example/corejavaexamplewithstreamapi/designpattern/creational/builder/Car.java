@@ -1,4 +1,4 @@
-package com.example.corejavaexamplewithstreamapi.designpattern.builder;
+package com.example.corejavaexamplewithstreamapi.designpattern.creational.builder;
 //Builder Pattern
 public class Car {
     private Integer id;

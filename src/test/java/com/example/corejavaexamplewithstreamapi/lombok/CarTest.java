@@ -1,6 +1,6 @@
 package com.example.corejavaexamplewithstreamapi.lombok;
 
-import com.example.corejavaexamplewithstreamapi.designpattern.builder.Car;
+import com.example.corejavaexamplewithstreamapi.designpattern.creational.builder.Car;
 import org.junit.jupiter.api.Test;
 
 class CarTest {

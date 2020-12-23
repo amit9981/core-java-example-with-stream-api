@@ -1,4 +1,4 @@
-package com.example.corejavaexamplewithstreamapi.designpattern.builder;
+package com.example.corejavaexamplewithstreamapi.designpattern.creational.builder;
 
 //Immutable class throw builder pattern
 public class Student {

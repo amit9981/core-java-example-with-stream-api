@@ -1,4 +1,4 @@
-package com.example.corejavaexamplewithstreamapi.designpattern.strategy;
+package com.example.corejavaexamplewithstreamapi.designpattern.behavioral.strategy;
 
 public class Red implements Color{
     @Override
